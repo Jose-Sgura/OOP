@@ -1,8 +1,8 @@
-class head:
+class Head:
     def __init__(self, eyes, mouth, nose):
         self.eyes= eyes
         self.mouth= mouth
-        self.eyes= nose
+        self.nose= nose
 class Torso:
     def __init__(self, heart, lungs):
         self.heart=heart
@@ -27,16 +27,16 @@ class Feet:
 class Human:
     def __init__(self,name):
         self.name=name
-        self.head=head()
-        self.torso=Torso()
+        self.head=Head(eyes=2,mouth=1,nose=1)
+        self.torso=Torso(heart=1, lungs=2)
         self.left_arm = Arm("left")
         self.right_arm = Arm("right")
-        self.left_hand = Hand()
-        self.right_hand = Hand()
+        self.left_hand = Hand(fingers=5)
+        self.right_hand = Hand(fingers=5)
         self.left_leg = Leg("left")
         self.right_leg = Leg("right")
-        self.left_foot = Feet()
-        self.right_foot = Feet()
+        self.left_foot = Feet(toes=5)
+        self.right_foot = Feet(toes=5)
     
     def description(self):
         print(f"Human: {self.name}")
@@ -46,4 +46,8 @@ class Human:
         print("Hands with", self.left_hand.fingers, "fingers each")
         print("Legs:", self.left_leg.side, "and", self.right_leg.side)
         print("Feet with", self.left_foot.toes, "toes each")
+
+ana=Human("Ana")
+ana.description()
+
 
